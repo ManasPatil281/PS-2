@@ -1,41 +1,86 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '@/components/NavBar';
-import DomainForm from '@/components/DomainForm';
-import mockData from '@/data/mockData.json';
-
-interface Indicator {
-  id: string;
-  question: string;
-  benchmarks: string[];
-}
-
-interface Domain {
-  domain: string;
-  indicators: Indicator[];
-}
+import SurveyNavbar from '@/components/SurveyNavbar';
+import SurveyForm from '@/components/SurveyForm';
+import surveyData from '@/data/surveyData.json';
+import { Toaster } from '@/components/ui/toaster';
 
 const Index = () => {
-  const [domains] = useState<Domain[]>(mockData);
-  const [activeDomain, setActiveDomain] = useState<string>(mockData[0]?.domain || '');
+  const [activeDomain, setActiveDomain] = useState(1);
+  const [allResponses, setAllResponses] = useState({});
+  const [progressData, setProgressData] = useState({});
 
-  const currentDomainData = domains.find(d => d.domain === activeDomain);
+  // Load saved responses from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('householdSurvey');
+    if (saved) {
+      try {
+        const parsedData = JSON.parse(saved);
+        const responsesByDomain = {};
+        const progress = {};
+        
+        parsedData.forEach(domainData => {
+          responsesByDomain[domainData.domainId] = {};
+          progress[domainData.domainId] = [];
+          
+          domainData.responses.forEach(response => {
+            responsesByDomain[domainData.domainId][response.questionId] = {
+              question: response.question,
+              answer: response.answer,
+              isOptional: response.isOptional
+            };
+            if (response.answer && response.answer.trim() !== '') {
+              progress[domainData.domainId].push(response.questionId);
+            }
+          });
+        });
+        
+        setAllResponses(responsesByDomain);
+        setProgressData(progress);
+      } catch (error) {
+        console.error('Error loading saved data:', error);
+      }
+    }
+  }, []);
+
+  // Update progress when responses change
+  useEffect(() => {
+    const newProgress: Record<string, string[]> = {};
+    Object.keys(allResponses).forEach(domainId => {
+      newProgress[domainId] = Object.entries((allResponses as any)[domainId] || {})
+        .filter(([_, response]: [string, any]) => response?.answer && response.answer.trim() !== '')
+        .map(([questionId]) => questionId);
+    });
+    setProgressData(newProgress);
+  }, [allResponses]);
+
+  const currentDomain = surveyData.find(d => d.id === activeDomain);
+  const currentResponses = allResponses[activeDomain] || {};
+
+  const handleResponsesChange = (newResponses: any) => {
+    setAllResponses(prev => ({
+      ...prev,
+      [activeDomain]: newResponses
+    }));
+  };
 
   return (
     <div className="min-h-screen bg-background">
-      <NavBar 
-        domains={domains.map(d => d.domain)}
+      <SurveyNavbar 
+        domains={surveyData}
         activeDomain={activeDomain}
         onDomainChange={setActiveDomain}
+        progressData={progressData}
       />
       
       <main className="py-8">
-        {currentDomainData && (
-          <DomainForm 
-            domain={currentDomainData.domain}
-            indicators={currentDomainData.indicators}
-          />
-        )}
+        <SurveyForm
+          domain={currentDomain}
+          responses={currentResponses}
+          onResponsesChange={handleResponsesChange}
+        />
       </main>
+      
+      <Toaster />
     </div>
   );
 };

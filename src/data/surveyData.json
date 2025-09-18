@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "domain": "Drinking Water and Sanitation",
+    "questions": [
+      {
+        "id": "1.1",
+        "question": "What is the primary source of drinking water for your household?",
+        "type": "select",
+        "options": ["Tap water", "Hand pump", "Covered well", "Tanker", "Other"]
+      },
+      {
+        "id": "1.2", 
+        "question": "Do you get enough clean drinking water for your household's needs throughout the year?",
+        "type": "yesno"
+      },
+      {
+        "id": "1.3",
+        "question": "Does your household have its own private toilet/latrine?",
+        "type": "yesno"
+      },
+      {
+        "id": "1.4",
+        "question": "Do any members of your household still have to defecate in the open?",
+        "type": "yesno"
+      },
+      {
+        "id": "1.5",
+        "question": "How do you primarily dispose of your household's solid waste (garbage) and liquid waste (wastewater)?",
+        "type": "select",
+        "options": ["Government collection", "Community bin", "Open dumping", "Connected to drain", "Other"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "domain": "Education",
+    "questions": [
+      {
+        "id": "2.1",
+        "question": "Please provide the age of each child in your household between 6 and 17. For each child, please state if they are currently enrolled and attending school.",
+        "type": "text"
+      },
+      {
+        "id": "2.2",
+        "question": "Are there any members of your household between the ages of 18 and 23? If so, are they currently enrolled in any post-higher secondary education?",
+        "type": "yesno"
+      },
+      {
+        "id": "2.3",
+        "question": "If your household belongs to a Scheduled Caste (SC), are your eligible school-going children receiving their pre-matric and post-matric scholarships?",
+        "type": "select",
+        "options": ["Yes", "No", "Not Applicable"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "domain": "Health and Nutrition",
+    "questions": [
+      {
+        "id": "3.1",
+        "question": "Is your household covered under any government health protection or insurance scheme (like Ayushman Bharat)?",
+        "type": "yesno"
+      },
+      {
+        "id": "3.2",
+        "question": "Are you aware of and able to get an emergency ambulance by making a phone call when needed?",
+        "type": "yesno"
+      },
+      {
+        "id": "3.3",
+        "question": "Were the children born in your household in the last year delivered at a hospital or a health facility?",
+        "type": "select",
+        "options": ["Yes", "No", "No births in last year"]
+      },
+      {
+        "id": "3.4",
+        "question": "Have all children under 1 year of age in your household received their full, age-appropriate vaccinations?",
+        "type": "select",
+        "options": ["Yes", "No", "No children in this age group"]
+      },
+      {
+        "id": "3.5",
+        "question": "For children born in your household in the last year, was their birth weight recorded? Was any child identified as having a low birth weight (less than 2.5 kg)?",
+        "type": "text"
+      },
+      {
+        "id": "3.6",
+        "question": "Have any children in your household (aged 0-5 years) been identified as underweight by a health worker or Anganwadi?",
+        "type": "select",
+        "options": ["Yes", "No", "No children in this age group"]
+      },
+      {
+        "id": "3.7",
+        "question": "In the last year, has your household experienced the death of a pregnant woman or a child under the age of one?",
+        "type": "yesno"
+      },
+      {
+        "id": "3.8",
+        "question": "If any member of your household was diagnosed with a major communicable disease in the last year, did they receive and complete the full prescribed treatment?",
+        "type": "select",
+        "options": ["Yes", "No", "Not Applicable"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "domain": "Social Security",
+    "questions": [
+      {
+        "id": "4.1",
+        "question": "Are all eligible members in your household receiving the Old Age Pension they are entitled to?",
+        "type": "yesno"
+      },
+      {
+        "id": "4.2",
+        "question": "Are all eligible members in your household receiving the Widow Pension they are entitled to?",
+        "type": "yesno"
+      },
+      {
+        "id": "4.3",
+        "question": "Are all eligible members in your household receiving the Disability Pension they are entitled to?",
+        "type": "yesno"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "domain": "Rural Roads and Housing",
+    "questions": [
+      {
+        "id": "5.1",
+        "question": "Is your house a 'Kachcha' structure (made of materials like mud, thatch) or a 'Pakka' structure (made of brick, cement)?",
+        "type": "select",
+        "options": ["Kachcha", "Pakka", "Mixed"]
+      },
+      {
+        "id": "5.2",
+        "question": "Do you consider your house safe to live in?",
+        "type": "yesno"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "domain": "Electricity and Clean Fuel",
+    "questions": [
+      {
+        "id": "6.1",
+        "question": "Does your household have a legal electricity connection?",
+        "type": "yesno"
+      },
+      {
+        "id": "6.2",
+        "question": "Does your household use at least one LED bulb for lighting?",
+        "type": "yesno"
+      },
+      {
+        "id": "6.3",
+        "question": "Does your household have and use a gas connection (LPG) for cooking?",
+        "type": "yesno"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "domain": "Agricultural Practices",
+    "questions": [
+      {
+        "id": "7.1",
+        "question": "If your household engages in farming, have you been issued a Soil Health Card?",
+        "type": "select",
+        "options": ["Yes", "No", "Not a farming household"]
+      },
+      {
+        "id": "7.2",
+        "question": "What portion of your farming is done using organic methods (without chemical fertilizers or pesticides)?",
+        "type": "text",
+        "placeholder": "Enter percentage (e.g., 50%)"
+      },
+      {
+        "id": "7.3",
+        "question": "Do you use any watershed management techniques (like farm ponds, check dams, etc.) on your agricultural land?",
+        "type": "select",
+        "options": ["Yes", "No", "Not Applicable"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "domain": "Financial Inclusion",
+    "questions": [
+      {
+        "id": "8.1",
+        "question": "Does every person in your household over the age of 5 have an Aadhaar card?",
+        "type": "yesno"
+      },
+      {
+        "id": "8.2",
+        "question": "Does at least one member of your household have an account in a Bank or Post Office?",
+        "type": "yesno"
+      },
+      {
+        "id": "8.3",
+        "question": "Are all eligible members in your household enrolled in the Pradhan Mantri Suraksha Bima Yojana (PMSBY) and Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)?",
+        "type": "yesno"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "domain": "Digitization",
+    "questions": [
+      {
+        "id": "9.1",
+        "question": "Does your household have access to the internet (e.g., on a mobile phone, home connection)?",
+        "type": "yesno"
+      },
+      {
+        "id": "9.2",
+        "question": "Is there a Common Service Centre (CSC) or Cyber Cafe in or near your village that you can access?",
+        "type": "yesno"
+      },
+      {
+        "id": "9.3",
+        "question": "How many members of your household can be considered digitally literate (i.e., can use a smartphone or computer for basic tasks like online payments or sending messages)?",
+        "type": "text",
+        "placeholder": "Enter number of members"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "domain": "Livelihood and Skill Development",
+    "questions": [
+      {
+        "id": "10.1",
+        "question": "Have any eligible youth (approx. 15-35 years old) from your household undergone any formal skill development training?",
+        "type": "yesno"
+      },
+      {
+        "id": "10.2",
+        "question": "Have any eligible youth in your household successfully availed a bank loan for self-employment or to start a business?",
+        "type": "yesno"
+      },
+      {
+        "id": "10.3",
+        "question": "Is any member of your household an active member of a Self-Help Group (SHG)?",
+        "type": "yesno"
+      }
+    ]
+  }
+]
