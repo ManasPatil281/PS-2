@@ -1,0 +1,67 @@
+[
+  {
+    "domain": "Drinking water and Sanitation",
+    "indicators": [
+      {
+        "id": "1.1",
+        "question": "Whether adequate sustainable drinking water sources to cover the village are available?",
+        "benchmarks": ["Yes=100%", "No=0%"]
+      },
+      {
+        "id": "1.2",
+        "question": "% of households provided with clean drinking water",
+        "benchmarks": [">75%", "50-75%", "<50%"]
+      },
+      {
+        "id": "1.3",
+        "question": "Whether toilet facilities are available for all households?",
+        "benchmarks": ["Yes=100%", "Partially=50%", "No=0%"]
+      }
+    ]
+  },
+  {
+    "domain": "Education",
+    "indicators": [
+      {
+        "id": "2.1",
+        "question": "% of children (6-10 years), both boys and girls, attending primary schools",
+        "benchmarks": ["100%", "90-99%", "<90%"]
+      },
+      {
+        "id": "2.2",
+        "question": "Whether school building and infrastructure are adequate?",
+        "benchmarks": ["Yes=100%", "Partially=50%", "No=0%"]
+      }
+    ]
+  },
+  {
+    "domain": "Healthcare",
+    "indicators": [
+      {
+        "id": "3.1",
+        "question": "Whether primary healthcare facility is available within 5 km?",
+        "benchmarks": ["Yes=100%", "No=0%"]
+      },
+      {
+        "id": "3.2",
+        "question": "% of pregnant women receiving antenatal care",
+        "benchmarks": [">90%", "70-90%", "<70%"]
+      }
+    ]
+  },
+  {
+    "domain": "Rural Infrastructure",
+    "indicators": [
+      {
+        "id": "4.1",
+        "question": "Whether all-weather road connectivity is available?",
+        "benchmarks": ["Yes=100%", "Partially=50%", "No=0%"]
+      },
+      {
+        "id": "4.2",
+        "question": "% of households with electricity connection",
+        "benchmarks": [">95%", "80-95%", "<80%"]
+      }
+    ]
+  }
+]
